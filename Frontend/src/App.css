@@ -1,0 +1,207 @@
+:root {
+	--primary-color: #4a90e2;
+	--secondary-color: #f7f7f7;
+	--background-color: #ffffff;
+	--hover-color: #3a78c4;
+	--accent-color: #ff5c5c;
+	--text-color: #333333;
+	--border-radius: 16px;
+	--transition-time: 0.3s;
+  }
+  
+  /* General Page Styling */
+  body {
+	font-family: 'Roboto', sans-serif;
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+	margin: 0;
+	padding: 0;
+  }
+  
+  h1 {
+	font-size: 2.5rem;
+	color: var(--primary-color);
+	margin-bottom: 30px;
+	text-align: center;
+  }
+  
+  /* Main container */
+  .main-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+  }
+  
+  button {
+	background-color: var(--primary-color);
+	color: #fff;
+	border: none;
+	padding: 12px 20px;
+	cursor: pointer;
+	border-radius: var(--border-radius);
+	font-size: 1rem;
+	transition: background-color var(--transition-time), transform var(--transition-time);
+  }
+  
+  button:hover {
+	background-color: var(--hover-color);
+	transform: scale(1.05);
+  }
+  
+  /* Vehicle List */
+  .vehicle-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	justify-content: center;
+  }
+  
+  .vehicle-card {
+	background-color: var(--background-color);
+	border-radius: var(--border-radius);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	width: 350px;
+	transition: box-shadow var(--transition-time), transform var(--transition-time);
+  }
+  
+  .vehicle-card:hover {
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+	transform: translateY(-5px);
+  }
+  
+  .vehicle-card h2 {
+	color: var(--primary-color);
+	font-size: 1.5rem;
+	margin-bottom: 15px;
+  }
+  
+  .vehicle-image {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 12px;
+	transition: transform var(--transition-time);
+  }
+  
+  .vehicle-image:hover {
+	transform: scale(1.1);
+  }
+  
+  /* Button container */
+  .button-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+  }
+  
+  .button-container button {
+	flex: 1;
+  }
+  
+  .button-container button:first-child {
+	background-color: var(--accent-color);
+  }
+  
+  .button-container button:hover {
+	transform: scale(1.05);
+  }
+  
+  /* Add Vehicle Form */
+  .form-container {
+	background-color: var(--background-color);
+	padding: 25px;
+	border-radius: var(--border-radius);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+	width: 400px;
+	margin-bottom: 20px;
+  }
+  
+  .form-container input, .form-container label {
+	display: block;
+	width: 100%;
+  }
+  
+  .form-container input {
+	padding: 10px;
+	border-radius: var(--border-radius);
+	border: 1px solid #ddd;
+	margin-bottom: 15px;
+	transition: border-color var(--transition-time);
+  }
+  
+  .form-container input:focus {
+	border-color: var(--primary-color);
+	outline: none;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+	0% {
+	  opacity: 0;
+	  transform: translateY(20px);
+	}
+	100% {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  .vehicle-card, .form-container {
+	animation: fadeInUp 0.5s ease;
+  }
+  
+  /* Contact button */
+  .vehicle-card button.contact-btn {
+	background-color: var(--primary-color);
+  }
+  
+  .vehicle-card button.contact-btn:hover {
+	background-color: var(--hover-color);
+  }
+  
+  /* Deletion Confirmation Modal */
+  .modal {
+	background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity var(--transition-time), visibility var(--transition-time);
+  }
+  
+  .modal.show {
+	visibility: visible;
+	opacity: 1;
+  }
+  
+  .modal-content {
+	background-color: var(--background-color);
+	padding: 20px;
+	border-radius: var(--border-radius);
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+	width: 400px;
+  }
+  
+  .modal-content h3 {
+	color: var(--primary-color);
+	font-size: 1.8rem;
+	margin-bottom: 20px;
+  }
+  
+  .modal-content button {
+	background-color: var(--accent-color);
+  }
+  
+  .modal-content button:hover {
+	background-color: #ff2e2e;
+  }
+  
